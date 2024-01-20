@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  margin-top: 60px;
+  height: calc(100vh-50px);
+}
+.main-container {
+  flex: 1;
+  margin-left: 220px;
+  width: 100%;
+  /* background-color: #ffdfdf; */
+}
+@media screen and (max-width: 480px) {
+  .main-container {
+    margin-left: 0;
+  }
+}

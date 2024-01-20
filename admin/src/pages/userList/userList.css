@@ -1,0 +1,30 @@
+.userlist {
+  flex: 4;
+  margin: 0 20px 20px 20px;
+  border-radius: 10px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+.user-list-user {
+  display: flex;
+  align-items: center;
+}
+.user-list-img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.user-list-edit-bt {
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: #3bb077;
+  color: white;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.user-list-del-icon {
+  color: red;
+  cursor: pointer;
+}

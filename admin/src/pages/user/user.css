@@ -1,0 +1,163 @@
+.user-div {
+  padding: 20px;
+}
+.user-title-cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.user-title {
+  font-weight: 600;
+}
+.user-show-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.user-update-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  margin-right: 20px;
+  object-fit: cover;
+}
+.user-add-bt {
+  width: 80px;
+  padding: 5px;
+  background-color: teal;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 15px;
+}
+.user-cont {
+  display: flex;
+  margin-top: 20px;
+}
+.user-show {
+  flex: 1;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+.user-update {
+  flex: 2;
+  padding: 20px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  margin-left: 20px;
+  border-radius: 10px;
+}
+.user-show-top {
+  display: flex;
+  align-items: center;
+}
+.user-show-top-title {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+.user-show-username {
+  font-weight: 600;
+}
+.user-show-desig {
+  font-weight: 300;
+}
+.user-show-bottom {
+  margin-top: 20px;
+}
+.user-show-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(175, 170, 170);
+}
+.user-show-info {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  color: #444;
+}
+.user-show-icon {
+  font-size: 16px !important;
+}
+.user-show-info-title {
+  margin-left: 10px;
+}
+.user-update-title {
+  font-size: 24px;
+  font-weight: 600;
+}
+.user-update-form {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.user-update-item {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.user-update-item > label {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+.user-update-ip {
+  width: 250px;
+  height: 30px;
+  outline: 0;
+  border-bottom: 1px solid gray;
+}
+.user-update-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.user-update-upload {
+  display: flex;
+  align-items: center;
+}
+.user-update-icon {
+  cursor: pointer;
+}
+.user-update-bt {
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+  background-color: darkblue;
+  color: white;
+  font-weight: 600;
+}
+@media screen and (max-width: 480px) {
+  .user-div,
+  .user-cont,
+  .user-update-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+  .user-show,
+  .user-update,
+  .user-update-form,
+  .user-update-bt {
+    width: 100%;
+  }
+  .user-title {
+    margin-right: 20px;
+  }
+  .user-title-cont {
+    width: 100%;
+    margin-top: 0;
+  }
+  .user-update-upload {
+    display: none;
+  }
+  .user-update {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
