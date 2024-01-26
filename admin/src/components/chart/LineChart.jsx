@@ -26,7 +26,6 @@ const LineChart = ({ userData, title, dataKey, grid }) => {
       },
       options: {
         aspectRatio: 4 / 1,
-        // grid &&
         scales: grid
           ? {
               x: {

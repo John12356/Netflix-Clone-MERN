@@ -5,7 +5,6 @@ import TimelineIcon from "@mui/icons-material/Timeline";
 import LineStyleIcon from "@mui/icons-material/LineStyle";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
-import StorefrontIcon from "@mui/icons-material/Storefront";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
@@ -13,6 +12,7 @@ import DynamicFeedIcon from "@mui/icons-material/DynamicFeed";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import ReportIcon from "@mui/icons-material/Report";
+import { PlayArrowRounded } from "@mui/icons-material";
 
 const Sidebar = ({ sidebarToggle }) => {
   const [sidebar, setSidebar] = useState(false);
@@ -51,8 +51,8 @@ const Sidebar = ({ sidebarToggle }) => {
             </Link>
             <Link to="/products" className="link">
               <li className="list-item">
-                <StorefrontIcon className="icon" />
-                <span>Products</span>
+                <PlayArrowRounded className="icon" />
+                <span>Movies</span>
               </li>
             </Link>
             <li className="list-item">

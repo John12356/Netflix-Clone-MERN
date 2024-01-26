@@ -8,6 +8,7 @@ import ProductList from "./pages/productList/ProductList";
 import User from "./pages/user/User";
 import NewProduct from "./pages/newProduct/NewProduct";
 import Product from "./pages/product/Product";
+import Login from "./pages/login/Login";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
@@ -21,6 +22,7 @@ const App = () => {
         <Sidebar sidebarToggle={sidebarToggle} />
         <div className="main-container">
           <Routes>
+            <Route path="/login" element={<Login />} />
             <Route index path="/" element={<Home />} />
             <Route path="/users" element={<UserList />} />
             <Route path="/user/:userId" element={<User />} />

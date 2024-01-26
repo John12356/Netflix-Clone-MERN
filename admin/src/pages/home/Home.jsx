@@ -29,13 +29,16 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/users/stats", {
+      .get("http://localhost:8080/api/user/stats", {
         headers: {
           token: `Bearer ${import.meta.env.VITE_ACCESS}`,
         },
       })
       .then((res) => {
-        res.data.map((item) =>
+        const sortedRes = res.data.sort(function (a, b) {
+          return a._id - b._id;
+        });
+        sortedRes.map((item) =>
           setUserStats((prev) => [
             ...prev,
             { name: months[item._id - 1], newUser: item.total },
@@ -44,8 +47,6 @@ const Home = () => {
       })
       .catch((err) => console.log(err));
   }, []);
-
-  console.log(userStats);
 
   return (
     <div className="home">

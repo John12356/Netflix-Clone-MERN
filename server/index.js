@@ -16,7 +16,7 @@ mongoose
   .catch((err) => console.log(err));
 
 app.use("/api/auth", authRoute);
-app.use("/api/users", userRoute);
+app.use("/api/user", userRoute);
 app.use("/api/movie", movieRoute);
 app.use("/api/list", listRoute);
 

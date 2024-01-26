@@ -1,86 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./memberWidget.css";
 import VisibilityIcon from "@mui/icons-material/Visibility";
+import axios from "axios";
 
 const MemberWidget = () => {
+  const [newUsers, setNewUsers] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/api/user?new=true", {
+        headers: {
+          token: `Bearer ${import.meta.env.VITE_ACCESS}`,
+        },
+      })
+      .then((res) => {
+        setNewUsers(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <div className="member-widget">
       <span className="widget-title">Newly Joined</span>
       <ul className="member-list">
-        <li className="member-item">
-          <img
-            src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
-            className="widgetSmImg"
-          />
-          <div className="user">
-            <span className="username">HemaPrasad</span>
-            <span className="user-desig">Software Engineer</span>
-          </div>
-          <button className="member-bt">
-            <VisibilityIcon className="user-vis-icon" /> Displpay
-          </button>
-        </li>
-
-        <li className="member-item">
-          <img
-            src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
-            className="widgetSmImg"
-          />
-          <div className="user">
-            <span className="username">HemaPrasad</span>
-            <span className="user-desig">Software Engineer</span>
-          </div>
-          <button className="member-bt">
-            <VisibilityIcon className="user-vis-icon" /> Displpay
-          </button>
-        </li>
-
-        <li className="member-item">
-          <img
-            src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
-            className="widgetSmImg"
-          />
-          <div className="user">
-            <span className="username">HemaPrasad</span>
-            <span className="user-desig">Software Engineer</span>
-          </div>
-          <button className="member-bt">
-            <VisibilityIcon className="user-vis-icon" /> Displpay
-          </button>
-        </li>
-
-        <li className="member-item">
-          <img
-            src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
-            className="widgetSmImg"
-          />
-          <div className="user">
-            <span className="username">HemaPrasad</span>
-            <span className="user-desig">Software Engineer</span>
-          </div>
-          <button className="member-bt">
-            <VisibilityIcon className="user-vis-icon" /> Displpay
-          </button>
-        </li>
-
-        <li className="member-item">
-          <img
-            src="https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            alt=""
-            className="widgetSmImg"
-          />
-          <div className="user">
-            <span className="username">HemaPrasad</span>
-            <span className="user-desig">Software Engineer</span>
-          </div>
-          <button className="member-bt">
-            <VisibilityIcon className="user-vis-icon" /> Displpay
-          </button>
-        </li>
+        {newUsers.map((user) => (
+          <li key={user._id} className="member-item">
+            <img
+              src={
+                user.profilePic ||
+                "https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-88wkdmjrorckekha.jpg"
+              }
+              alt=""
+              className="widgetSmImg"
+            />
+            <div className="user">
+              <span className="username">{user.username}</span>
+              {/* <span className="user-desig"></span> */}
+            </div>
+            <button className="member-bt">
+              <VisibilityIcon className="user-vis-icon" /> Displpay
+            </button>
+          </li>
+        ))}
       </ul>
     </div>
   );
