@@ -1,49 +1,43 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
 import { productRows } from "../../assets/dummyData";
 import "./productList.css";
-import axios from "axios";
 import { DeleteOutline } from "@mui/icons-material";
+import { MovieContext } from "../../context/movieContext/MovieContext";
+import { deleteMovies, getMovies } from "../../context/movieContext/apiCalls";
 
 const ProductList = () => {
-  const [data, setData] = useState(productRows);
+  const { movies, dispatch } = useContext(MovieContext);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:8080/api/movie/", {
-        headers: {
-          token: `Bearer ${import.meta.env.VITE_ACCESS}`,
-        },
-      })
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+    getMovies(dispatch);
+  }, [dispatch]);
 
   const handleDelete = (id) => {
-    setData(data.filter((item) => item.id !== id));
+    deleteMovies(id, dispatch);
   };
 
   const columns = [
-    { field: "id", headerName: "ID", width: 90 },
+    { field: "_id", headerName: "Id", width: 90 },
     {
-      field: "product",
-      headerName: "Product",
+      field: "movie",
+      headerName: "Movie",
       width: 200,
       renderCell: (params) => {
         return (
           <div className="product-list-item">
             <img src={params.row.img} alt="" className="product-list-img" />
-            {params.row.name}
+            {params.row.title}
           </div>
         );
       },
     },
-    { field: "stock", headerName: "Stock", width: 200 },
-    { field: "status", headerName: "Status", width: 120 },
-    { field: "price", headerName: "Price", width: 160 },
+    { field: "genre", headerName: "Genre", width: 120 },
+    { field: "year", headerName: "Year", width: 120 },
+    { field: "limit", headerName: "Limit", width: 120 },
+    { field: "isSeries", headerName: "Series", width: 120 },
+
     {
       field: "action",
       headerName: "Action",
@@ -51,12 +45,15 @@ const ProductList = () => {
       renderCell: (params) => {
         return (
           <>
-            <Link to={"/product/" + params.row.id}>
+            <Link
+              to={"/product/" + params.row._id}
+              state={{ movie: params.row }}
+            >
               <button className="product-list-edit-bt">Edit</button>
             </Link>
             <DeleteOutline
               className="product-list-del-bt"
-              onClick={() => handleDelete(params.row.id)}
+              onClick={() => handleDelete(params.row._id)}
             />
           </>
         );
@@ -67,11 +64,12 @@ const ProductList = () => {
   return (
     <div className="productlist">
       <DataGrid
-        rows={data}
+        rows={movies}
         disableSelectionOnclick
         columns={columns}
         pageSize={8}
         checkboxSelection
+        getRowId={(r) => r._id}
       />
     </div>
   );

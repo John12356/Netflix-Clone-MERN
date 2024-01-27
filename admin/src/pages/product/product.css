@@ -27,6 +27,13 @@
   object-fit: cover;
   margin-right: 20px;
 }
+.product-info-key {
+  margin-right: 20px;
+}
+.product-form {
+  display: flex;
+  justify-content: space-between;
+}
 .product-upload-img {
   width: 100px;
   height: 100px;
@@ -79,15 +86,21 @@
 .product-form-left {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  margin-right: 40px;
 }
 .product-form-left > label {
   margin-bottom: 10px;
   color: gray;
+  width: 100%;
 }
 .product-form-left > input {
   margin-bottom: 10px;
   padding: 5px;
-  border-bottom: 1px solid gray;
+  border: 1px solid gray;
+  border-radius: 5px;
+  width: 100%;
+  height: 40px;
 }
 .product-form-left > select {
   margin-bottom: 10px;

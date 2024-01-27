@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 100dvh;
   background: url(bg.jpg) no-repeat;
   background-size: cover;
   background-position: center;
@@ -92,4 +92,10 @@
 }
 .login-register-link p a:hover {
   text-decoration: underline;
+}
+
+@media screen and (max-width: 480px) {
+  .login-wrapper {
+    margin: 15px;
+  }
 }

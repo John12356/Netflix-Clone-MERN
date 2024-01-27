@@ -8,6 +8,9 @@
 }
 .newproduct-form {
   margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 .newproduct-item {
   width: 250px;
