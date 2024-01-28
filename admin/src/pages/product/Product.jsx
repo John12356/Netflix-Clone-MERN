@@ -7,7 +7,6 @@ const Product = () => {
   const location = useLocation();
   const movie = location.state.movie;
   console.log(movie);
-
   return (
     <div className="product">
       <div className="product-title-cont">
@@ -54,19 +53,19 @@ const Product = () => {
         <form action="" className="product-form">
           <div className="product-form-left">
             <label htmlFor="">Movie Title</label>
-            <input type="text" placeholder={movie.title} />
+            <input type="text" placeholder={movie.title.toString()} />
             <label htmlFor="">Year</label>
-            <input type="text" placeholder={movie.year} />
+            <input type="text" placeholder={movie.year.toString()} />
             <label htmlFor="">Genre</label>
-            <input type="text" placeholder={movie.genre} />
+            <input type="text" placeholder={movie.genre.toString()} />
             <label htmlFor="">Limit</label>
-            <input type="text" placeholder={movie.limit} />
+            <input type="text" placeholder={movie.limit.toString()} />
             <label htmlFor="">Is Series</label>
-            <input type="text" placeholder={movie.isSeries} />
+            <input type="text" placeholder={movie.isSeries.toString()} />
             <label htmlFor="">Trailer</label>
-            <input type="file" placeholder={movie.trailer} />
+            <input type="file" placeholder={movie.trailer.toString()} />
             <label htmlFor="">Video</label>
-            <input type="file" placeholder={movie.video} />
+            <input type="file" placeholder={movie.video.toString()} />
           </div>
           <div className="product-form-right">
             <div className="product-upload">
