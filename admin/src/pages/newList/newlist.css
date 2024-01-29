@@ -1,0 +1,15 @@
+.newlist-bt {
+  height: 40px;
+  margin-top: 30px;
+}
+.newproduct-form {
+  width: 100%;
+  flex-wrap: nowrap;
+}
+.form-left,
+.form-right {
+  width: 50%;
+}
+.newproduct-item {
+  width: 100%;
+}

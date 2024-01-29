@@ -5,6 +5,7 @@ import TimelineIcon from "@mui/icons-material/Timeline";
 import LineStyleIcon from "@mui/icons-material/LineStyle";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
+import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
@@ -55,10 +56,12 @@ const Sidebar = ({ sidebarToggle }) => {
                 <span>Movies</span>
               </li>
             </Link>
-            <li className="list-item">
-              <AttachMoneyIcon className="icon" />
-              <span>Transactions</span>
-            </li>
+            <Link to="/lists" className="link">
+              <li className="list-item">
+                <FormatListBulletedIcon className="icon" />
+                <span>Lists</span>
+              </li>
+            </Link>
             <li className="list-item">
               <BarChartIcon className="icon" />
               <span>Reports</span>
