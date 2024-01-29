@@ -56,7 +56,7 @@
             .itemInfoTop{
                 display: flex;
                 align-items: center;
-                margin-bottom: 10x;
+                margin-bottom: 10px;
                 font-size: 14px;
                 font-weight: 600;
                 color: gray;
@@ -70,10 +70,13 @@
             .desc{
                 font-size: 13px;
                 margin-bottom: 10px;
+                overflow: hidden;
+                height: 30px;
             }
             .genre{
                 font-size: 14px;
                 color: lightgray;
+                margin-bottom: 5px;
             }
         }
     }

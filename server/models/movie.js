@@ -13,7 +13,7 @@ const movieSchema = new mongoose.Schema(
     img: {
       type: String,
     },
-    imageTitle: {
+    imgTitle: {
       type: String,
     },
     imgSm: {
@@ -33,6 +33,9 @@ const movieSchema = new mongoose.Schema(
     },
     genre: {
       type: String,
+    },
+    duration: {
+      type: Number,
     },
     isSeries: {
       type: Boolean,

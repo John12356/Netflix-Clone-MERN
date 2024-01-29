@@ -27,9 +27,8 @@ const ListItem = ({ index, item }) => {
       .catch((err) => console.log(err));
   }, [item]);
 
-  function gotoWatch() {
-    navigate("/watch");
-  }
+  console.log(item);
+
   // const trailer =
   //   "https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c0fd273d2c6d9a064f3ae35579b2bbdf&profile_id=139&oauth2_token_id=57447761";
 
@@ -57,8 +56,15 @@ const ListItem = ({ index, item }) => {
               <ThumbUpAltOutlined className="icon" />
               <ThumbDownOutlined className="icon" />
             </div>
+            <div className="genre">
+              <b>{movie.title}</b>
+            </div>
+
             <div className="itemInfoTop">
-              <span>162 min</span>
+              <span>
+                {movie.duration}
+                {movie.isSeries ? " Seasons" : " min"}
+              </span>
               <span className="limit">{movie.limit}</span>
               <span>{movie.year}</span>
             </div>
