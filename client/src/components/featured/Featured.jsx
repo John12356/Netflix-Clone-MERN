@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 const Featured = ({ type }) => {
   const [content, setContent] = useState({});
+  console.log(content);
 
   useEffect(() => {
     axios
@@ -25,7 +26,11 @@ const Featured = ({ type }) => {
       {type && (
         <div className="category">
           <span>{type === "movies" ? "Movies" : "Series"}</span>
-          <select name="genre" id="genre">
+          <select
+            name="genre"
+            id="genre"
+            // onChange={(e) => setGenre(e.target.value)}
+          >
             <option value="">Genre</option>
             <option value="comedy">Comedy</option>
             <option value="crime">Crime</option>

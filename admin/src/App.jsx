@@ -23,7 +23,7 @@ const App = () => {
       <Routes>
         {user && (
           <Route path="/" element={<Navigation />}>
-            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/users" element={<UserList />} />
             <Route path="/user/:userId" element={<User />} />
             <Route path="/newUser" element={<NewUser />} />
@@ -35,7 +35,11 @@ const App = () => {
             <Route path="/lists" element={<List />} />
           </Route>
         )}
-        <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
+        <Route
+          index
+          path="/"
+          element={user ? <Navigate to="/home" /> : <Login />}
+        />
       </Routes>
     </BrowserRouter>
   );

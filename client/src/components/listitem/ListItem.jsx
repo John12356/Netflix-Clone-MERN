@@ -27,11 +27,6 @@ const ListItem = ({ index, item }) => {
       .catch((err) => console.log(err));
   }, [item]);
 
-  console.log(item);
-
-  // const trailer =
-  //   "https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c0fd273d2c6d9a064f3ae35579b2bbdf&profile_id=139&oauth2_token_id=57447761";
-
   return (
     <div
       className="listItem"
@@ -39,13 +34,8 @@ const ListItem = ({ index, item }) => {
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
-      <img
-        src={movie.img}
-        // src="https://occ-0-1723-92.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABU7D36jL6KiLG1xI8Xg_cZK-hYQj1L8yRxbQuB0rcLCnAk8AhEK5EM83QI71bRHUm0qOYxonD88gaThgDaPu7NuUfRg.jpg?r=4ee"
-        alt=""
-      />
       {isHover && (
-        <div>
+        <div className="hoverkulla">
           <video src={movie.trailer} autoPlay={true} loop />
           <div className="itemInfo">
             <div className="icons">
@@ -73,6 +63,7 @@ const ListItem = ({ index, item }) => {
           </div>
         </div>
       )}
+      <img src={movie.img} alt="" />
     </div>
   );
 };

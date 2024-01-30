@@ -7,7 +7,7 @@ import axios from "axios";
 
 const Home = ({ type }) => {
   const [lists, setLists] = useState([]);
-  const [genre, getGenre] = useState(null);
+  const [genre, setGenre] = useState(null);
 
   useEffect(() => {
     axios
@@ -23,7 +23,6 @@ const Home = ({ type }) => {
         }
       )
       .then((res) => {
-        // console.log(res);
         setLists(res.data);
       })
       .catch((err) => console.log(err));

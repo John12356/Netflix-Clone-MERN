@@ -3,7 +3,7 @@ const User = require("../models/user");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-//registration jwt
+//registration
 router.post("/register", async (req, res) => {
   const { username, email, password } = req.body;
   const salt = await bcrypt.genSalt(10);
