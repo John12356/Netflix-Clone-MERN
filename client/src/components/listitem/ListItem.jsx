@@ -21,7 +21,8 @@ const ListItem = ({ index, item }) => {
       .get(`${import.meta.env.VITE_SERVER}/api/movie/findOne/${item}`, {
         headers: {
           token:
-            "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+            // "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+            `Bearer ${user.accessToken}`,
         },
       })
       .then((res) => {
