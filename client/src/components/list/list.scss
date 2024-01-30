@@ -12,9 +12,17 @@
         @include mobile{
             margin-left: 20px;
         }
+
     }
     .wrapper{
         position: relative;
+        @include mobile {
+                overflow-x: scroll;
+                overflow-y: hidden;
+            }
+            &::-webkit-scrollbar{
+                display: none;
+            }
 
         .slideArrow{
             width: 50px;
@@ -42,15 +50,16 @@
         .container{
             margin-left: 50px;
             display: flex;
+            
             margin-top: 10px;
             width: max-content;
             transform: translateX(0px);
             transition: all 1s ease;
             position: relative;
-
-            @include mobile {
-                    margin-left: 20px;
-                }
+            @include mobile{
+                margin-left: 20px;
+            }
+            
         }
     }
 }
