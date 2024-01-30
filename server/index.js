@@ -8,7 +8,7 @@ const movieRoute = require("./routes/movieRoute");
 const listRoute = require("./routes/listRoute");
 require("dotenv").config();
 
-app.use([cors({origin:https://netflix-clone-mern-gold.vercel.app}), express.json(), express.urlencoded({ extended: true })]);
+app.use([cors(), express.json(), express.urlencoded({ extended: true })]);
 
 app.get("/", (req, res) => {
   res.json("hello");
