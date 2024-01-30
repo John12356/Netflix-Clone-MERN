@@ -8,13 +8,15 @@ import { Link } from "react-router-dom";
 const Featured = ({ type }) => {
   const { user } = useContext(AuthContext);
   const [content, setContent] = useState({});
+  console.log(user.accessToken);
 
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_SERVER}/api/movie/random?type=${type}`, {
         headers: {
           token:
-            "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+            // "Bearer " + JSON.parse(localStorage.getItem("user"))?.accessToken,
+            `Bearer ${user.accessToken}`,
         },
       })
       .then((res) => {
