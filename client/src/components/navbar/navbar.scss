@@ -1,3 +1,5 @@
+@import '../../App.scss';
+
 .navbar{
     width: 100%;
     color: white;
@@ -20,6 +22,10 @@
         justify-content: space-between;
         height: 70px;
 
+        @include mobile {
+            padding: 0 20px;    
+        }
+
         .left{
             display: flex;
             align-items: center;
@@ -27,16 +33,30 @@
             img{
                 height: 25px;
                 margin-right: 40px;
+                @include mobile {
+                        display: none;
+                    }
             }
             span{
                 margin-right: 20px;
                 cursor: pointer;
+
+                @include mobile{
+                    display: none;
+                }
+
+                &.mob-res{
+                    @include mobile {
+                        display: block;
+                    }
+                }
             }
         }
         .right{
             display: flex;
             align-items: center;
 
+           
             img{
                 width: 30px;
                 height: 30px;
@@ -44,15 +64,27 @@
                 object-fit: cover;
                 cursor: pointer;
             }
+            span{
+                @include mobile {
+                        display: none;
+                    }
+            }
+            
             .icon{
                 margin: 0 15px;
                 cursor: pointer;
+                &.mob-unwanted {
+                        @include mobile {
+                            display: none;
+                        }
+                    }
             }
             .profile{
                 .options{
                     display: none;
-                    background-color: var(--main-color);
-                    border-radius: 5px;
+                    background-color: #0f0f0f;
+                        border-radius: 5px;
+                        color: white;
                 }
                 span{
                     padding: 10px;

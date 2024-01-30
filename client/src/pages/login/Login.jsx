@@ -46,7 +46,7 @@ const Login = () => {
           <span>
             New to Netflix?
             <Link className="link" to="/register">
-              <b>Sign up now.</b>
+              <b> Sign up now.</b>
             </Link>
           </span>
           <small>

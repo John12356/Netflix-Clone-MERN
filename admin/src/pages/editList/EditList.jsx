@@ -16,7 +16,6 @@ const EditList = () => {
       <div className="product-top">
         <div className="product-top-right">
           <div className="product-info-top">
-            {/* <img src={list.img} alt="" className="product-info-img" /> */}
             <span className="product-name">{list.title}</span>
           </div>
           <div className="product-info-bottom">
@@ -46,16 +45,6 @@ const EditList = () => {
             <input type="text" placeholder={list.type.toString()} />
             <button className="product-bt">Update</button>
           </div>
-          {/* <div className="product-form-right">
-            <div className="product-upload">
-              <img src={list.img} alt="" className="product-upload-img" />
-              <label htmlFor="file">
-                <Publish />
-              </label>
-              <input type="file" id="file" style={{ display: "none" }} />
-            </div>
-            <button className="product-bt">Update</button>
-          </div> */}
         </form>
       </div>
     </div>

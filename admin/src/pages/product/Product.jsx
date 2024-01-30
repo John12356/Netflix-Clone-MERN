@@ -16,14 +16,6 @@ const Product = () => {
         </Link>
       </div>
       <div className="product-top">
-        {/* <div className="product-top-left">
-          <LineChart
-            userData={productData}
-            title="Sales Performance"
-            dataKey="Sales"
-            grid
-          />
-        </div> */}
         <div className="product-top-right">
           <div className="product-info-top">
             <img src={movie.img} alt="" className="product-info-img" />

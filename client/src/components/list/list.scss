@@ -1,3 +1,4 @@
+@import '../../App.scss';
 .list{
     width: 100%;
     margin-top: 10px;
@@ -7,6 +8,10 @@
         font-size: 20px;
         margin-left: 50px;
         font-weight: 500;
+
+        @include mobile{
+            margin-left: 20px;
+        }
     }
     .wrapper{
         position: relative;
@@ -23,6 +28,10 @@
             margin: auto;
             cursor: pointer;
 
+            @include mobile{
+                display: none;
+            }
+
             &.left{
                 left: 0;
             }
@@ -38,6 +47,10 @@
             transform: translateX(0px);
             transition: all 1s ease;
             position: relative;
+
+            @include mobile {
+                    margin-left: 20px;
+                }
         }
     }
 }

@@ -1,18 +1,20 @@
 import { InfoOutlined, PlayArrow } from "@mui/icons-material";
 import "./featured.scss";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../context/authContext/AuthContext";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
 const Featured = ({ type }) => {
+  const { user } = useContext(AuthContext);
   const [content, setContent] = useState({});
-  console.log(content);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/api/movie/random?type=${type}`, {
+      .get(`${import.meta.env.VITE_SERVER}/api/movie/random?type=${type}`, {
         headers: {
-          token: `Bearer ${import.meta.env.VITE_ACCESS}`,
+          token:
+            "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
         },
       })
       .then((res) => {
@@ -26,11 +28,7 @@ const Featured = ({ type }) => {
       {type && (
         <div className="category">
           <span>{type === "movies" ? "Movies" : "Series"}</span>
-          <select
-            name="genre"
-            id="genre"
-            // onChange={(e) => setGenre(e.target.value)}
-          >
+          <select name="genre" id="genre">
             <option value="">Genre</option>
             <option value="comedy">Comedy</option>
             <option value="crime">Crime</option>
@@ -46,7 +44,6 @@ const Featured = ({ type }) => {
 
       <img src={content.img} alt="" />
       <div className="info">
-        {/* <img src={content.imgTitle} alt="" /> */}
         <h1 className="featured-movie-name">{content.title}</h1>
         <span className="desc">{content.desc}</span>
         <div className="buttons">
@@ -56,7 +53,7 @@ const Featured = ({ type }) => {
               <span>Play</span>
             </button>
           </Link>
-          <button className="more">
+          <button className="more play">
             <InfoOutlined />
             <span>More info</span>
           </button>

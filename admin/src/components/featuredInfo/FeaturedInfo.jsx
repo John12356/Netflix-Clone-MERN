@@ -30,18 +30,6 @@ const FeaturedInfo = () => {
         <span className="featured-sub">Compared to last month</span>
       </div>
 
-      {/* <div className="featured-item">
-        <span className="featured-title">Users</span>
-        <div className="cash-cont">
-          <span className="money">67,415</span>
-          <span className="money-rate">
-            +5.4
-            <ArrowUpwardIcon className="featured-icon" />
-          </span>
-        </div>
-        <span className="featured-sub">Compared to last month</span>
-      </div> */}
-
       <div className="featured-item">
         <span className="featured-title">Cost</span>
         <div className="cash-cont">

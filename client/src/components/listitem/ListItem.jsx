@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../context/authContext/AuthContext";
 import "./listItem.scss";
 import {
   PlayArrow,
@@ -11,14 +12,16 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 const ListItem = ({ index, item }) => {
+  const { user } = useContext(AuthContext);
   const [isHover, setIsHover] = useState(false);
   const [movie, setMovie] = useState({});
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/api/movie/findOne/${item}`, {
+      .get(`${import.meta.env.VITE_SERVER}/api/movie/findOne/${item}`, {
         headers: {
-          token: `Bearer ${import.meta.env.VITE_ACCESS}`,
+          token:
+            "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
         },
       })
       .then((res) => {

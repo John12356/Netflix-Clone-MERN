@@ -1,24 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Featured from "../../components/featured/Featured";
 import Navbar from "../../components/navbar/Navbar";
 import List from "../../components/list/List";
 import "./home.scss";
 import axios from "axios";
+import { AuthContext } from "../../context/authContext/AuthContext";
 
 const Home = ({ type }) => {
+  const { user } = useContext(AuthContext);
   const [lists, setLists] = useState([]);
   const [genre, setGenre] = useState(null);
 
   useEffect(() => {
     axios
       .get(
-        `http://localhost:8080/api/list${type ? "?type=" + type : ""}${
+        `${import.meta.env.VITE_SERVER}/api/list${type ? "?type=" + type : ""}${
           genre ? "&genre=" + genre : ""
         }
         `,
         {
           headers: {
-            token: `Bearer ${import.meta.env.VITE_ACCESS}`,
+            token:
+              "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
           },
         }
       )

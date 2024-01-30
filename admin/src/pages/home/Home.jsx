@@ -1,4 +1,3 @@
-import { userData } from "../../assets/dummyData";
 import React, { useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import "./home.css";
@@ -29,9 +28,10 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/user/stats", {
+      .get(`${import.meta.env.VITE_SERVER}/api/user/stats`, {
         headers: {
-          token: `Bearer ${import.meta.env.VITE_ACCESS}`,
+          token:
+            "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
         },
       })
       .then((res) => {

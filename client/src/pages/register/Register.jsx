@@ -18,13 +18,12 @@ const Register = () => {
     setPassword(passRef.current.value);
 
     axios
-      .post("http://localhost:8080/api/auth/register", {
+      .post(`${import.meta.env.VITE_SERVER}/api/auth/register`, {
         username,
         email,
         password,
       })
       .then((res) => {
-        console.log(res.data);
         navigate("/login");
       })
       .catch((err) => console.log(err));

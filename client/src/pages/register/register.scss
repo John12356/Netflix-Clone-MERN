@@ -1,3 +1,5 @@
+@import '../../App.scss';
+
 .register{
     width: 100vw;
     height: 100vh;
@@ -42,6 +44,10 @@
         align-items: center;
         color: white;
 
+        @include mobile{
+            margin: 20px;
+        }
+
         h1{
             font-size: 50px;
         }
@@ -60,6 +66,11 @@
             height: 50px;
             border-radius: 5px;
 
+            @include mobile {
+                    width: 90%;
+                    margin-right: 30px;
+                }
+            
             input{
                 flex: 9;
                 height: 100%;

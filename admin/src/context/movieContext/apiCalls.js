@@ -14,7 +14,7 @@ import axios from "axios";
 export const getMovies = (dispatch) => {
   dispatch(getMovieStart());
   axios
-    .get("http://localhost:8080/api/movie", {
+    .get(`${import.meta.env.VITE_SERVER}/api/movie`, {
       headers: {
         token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
       },
@@ -31,13 +31,12 @@ export const getMovies = (dispatch) => {
 export const deleteMovies = (id, dispatch) => {
   dispatch(deleteMovieStart());
   axios
-    .delete(`http://localhost:8080/api/movie/${id}`, {
+    .delete(`${import.meta.env.VITE_SERVER}/api/movie/${id}`, {
       headers: {
         token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
       },
     })
     .then((res) => {
-      console.log(res);
       dispatch(deleteMovieSuccess(id));
     })
     .catch((err) => {
@@ -50,13 +49,12 @@ export const createMovies = (movie, dispatch) => {
   console.log(movie);
   dispatch(createMovieStart());
   axios
-    .post("http://localhost:8080/api/movie/", movie, {
+    .post(`${import.meta.env.VITE_SERVER}/api/movie/`, movie, {
       headers: {
         token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
       },
     })
     .then((res) => {
-      console.log(res.data);
       dispatch(createMovieSuccess(res.data));
     })
     .catch((err) => {

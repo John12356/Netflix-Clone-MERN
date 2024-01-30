@@ -14,7 +14,7 @@ import axios from "axios";
 export const getList = (dispatch) => {
   dispatch(getListStart());
   axios
-    .get("http://localhost:8080/api/list", {
+    .get(`${import.meta.env.VITE_SERVER}/api/list`, {
       headers: {
         token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
       },
@@ -31,13 +31,12 @@ export const getList = (dispatch) => {
 export const deleteList = (id, dispatch) => {
   dispatch(deleteListStart());
   axios
-    .delete(`http://localhost:8080/api/list/${id}`, {
+    .delete(`${import.meta.env.VITE_SERVER}/api/list/${id}`, {
       headers: {
         token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
       },
     })
     .then((res) => {
-      console.log(res);
       dispatch(deleteListSuccess(id));
     })
     .catch((err) => {
@@ -50,7 +49,7 @@ export const createList = (list, dispatch) => {
   console.log(list);
   dispatch(createListStart());
   axios
-    .post("http://localhost:8080/api/list/", list, {
+    .post(`${import.meta.env.VITE_SERVER}/api/list/`, list, {
       headers: {
         token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
       },

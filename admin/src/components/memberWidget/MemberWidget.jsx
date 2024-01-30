@@ -2,15 +2,19 @@ import React, { useEffect, useState } from "react";
 import "./memberWidget.css";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import axios from "axios";
+import { AuthContext } from "../../context/authContext/AuthContext";
+import { useContext } from "react";
 
 const MemberWidget = () => {
+  const { user } = useContext(AuthContext);
   const [newUsers, setNewUsers] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/user?new=true", {
+      .get(`${import.meta.env.VITE_SERVER}/api/user?new=true`, {
         headers: {
-          token: `Bearer ${import.meta.env.VITE_ACCESS}`,
+          token:
+            "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
         },
       })
       .then((res) => {
@@ -18,6 +22,7 @@ const MemberWidget = () => {
       })
       .catch((err) => console.log(err));
   }, []);
+
   return (
     <div className="member-widget">
       <span className="widget-title">Newly Joined</span>
@@ -34,7 +39,6 @@ const MemberWidget = () => {
             />
             <div className="user">
               <span className="username">{user.username}</span>
-              {/* <span className="user-desig"></span> */}
             </div>
             <button className="member-bt">
               <VisibilityIcon className="user-vis-icon" /> Displpay
