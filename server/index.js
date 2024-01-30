@@ -10,6 +10,10 @@ require("dotenv").config();
 
 app.use([cors(), express.json(), express.urlencoded({ extended: true })]);
 
+app.get("/", (req, res) => {
+  res.json("hello");
+});
+
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => console.log("DB connected"))
