@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import LogoutIcon from "@mui/icons-material/Logout";
 import "./navbar.scss";
 import { ArrowDropDown, Notifications, Search } from "@mui/icons-material";
 import { Link } from "react-router-dom";
@@ -8,11 +9,16 @@ import { logout } from "../../context/authContext/AuthAction";
 const Navbar = () => {
   const { dispatch } = useContext(AuthContext);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [dropped, setDropped] = useState(false);
 
   window.onscroll = () => {
     setIsScrolled(window.scrollY === 0 ? false : true);
     return () => (window.onscroll = null);
   };
+
+  function showMobDrop() {
+    setDropped((prev) => !prev);
+  }
 
   return (
     <div className={isScrolled ? "navbar scrolled" : "navbar"}>
@@ -39,9 +45,13 @@ const Navbar = () => {
           <span className="mob-unwanted">KID</span>
           <Notifications className="icon mob-unwanted" />
           <img
-            src="https://images.pexels.com/photos/6899260/pexels-photo-6899260.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd91mv0lL74B-D8yJbBcbDaoihGY_Uxctj4_sTHF69Aw&"
+            // src="https://images.pexels.com/photos/6899260/pexels-photo-6899260.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
             alt=""
           />
+          <div className="mob-out">
+            <LogoutIcon onClick={() => dispatch(logout())} />
+          </div>
           <div className="profile">
             <ArrowDropDown className="icon" />
             <div className="options">
