@@ -16,13 +16,14 @@
     }
     .wrapper{
         position: relative;
-        @include mobile {
-                overflow-x: scroll;
-                overflow-y: hidden;
-            }
-            &::-webkit-scrollbar{
-                display: none;
-            }
+
+        // @include mobile {
+        //         overflow-y: scroll;
+        //         // z-index: -1;
+        //     }
+        //     &::-webkit-scrollbar{
+        //         display: none;
+        //     }
 
         .slideArrow{
             width: 50px;
@@ -36,9 +37,9 @@
             margin: auto;
             cursor: pointer;
 
-            @include mobile{
-                display: none;
-            }
+            // @include mobile{
+            //     display: none;
+            // }
 
             &.left{
                 left: 0;

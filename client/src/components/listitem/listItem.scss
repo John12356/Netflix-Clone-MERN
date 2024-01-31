@@ -1,3 +1,4 @@
+@import '../../App.scss';
 .listItem{
     width: 225px;
     height: 120px;
@@ -5,7 +6,11 @@
     margin-right: 5px;
     cursor: pointer;
     color: white;
-    // position: relative;
+
+    &:focus{
+        z-index: 0;
+        background-color: red;
+    }
 
     img{
         width: 100%;
@@ -29,6 +34,10 @@
         -webkit-box-shadow:0 0 15px 0 rgba(255,255,255,0.07);
         box-shadow:0 0 15px 0 rgba(255, 255, 255, 0.07) ;
         padding: 5px;
+        
+        // @include mobile {
+        //     z-index: 9999 !important;
+        // }
 
         .itemInfo{
             display: flex;
