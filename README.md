@@ -45,6 +45,9 @@ This Netflix clone aims to replicate key features of the original Netflix platfo
 - **React.js**: A JavaScript library for building user interfaces.
 - **HTML5 & CSS3**: Markup and styling languages for building web pages.
 - **JavaScript**: A programming language for adding interactivity to web applications.
+- **NodeJS**: Node.js is an open-source, cross-platform JavaScript runtime environment that allows developers to execute JavaScript code server-side.
+- **ExpressJS**: Express.js is a minimal and flexible web application framework for Node.js.
+- **JWT**: JWT stands for JSON Web Token. It is a compact, URL-safe means of representing claims between two parties.
 - **Style-Components**: A CSS framework for creating responsive and mobile-first designs.
 - **Git**: A version control system for tracking changes and collaborating on projects.
 - **Vercel**: A platform for hosting and deploying web applications.
