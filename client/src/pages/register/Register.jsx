@@ -60,7 +60,7 @@ const Register = () => {
             </button>
           </div>
         ) : (
-          <form action="" className="input">
+          <form action="" className="input user-ip">
             <input type="text" placeholder="username" ref={usernameRef} />
 
             <input type="password" placeholder="password" ref={passRef} />
