@@ -63,7 +63,7 @@ Clone the repository: `git clone https://github.com/John12356/Netflix-Clone-MERN
 1. Navigate to the project directory: `cd client`
 2. Install the dependencies: `npm install`
 3. Create a .env file & add
-   1. `VITE_SERVER=http://localhost:5173`
+   1. `VITE_SERVER = http://localhost:8080`
 5. Start the development server: `npm run dev`
 6. Open your browser and visit: `http://localhost:5173`
    
@@ -71,8 +71,8 @@ Clone the repository: `git clone https://github.com/John12356/Netflix-Clone-MERN
 1. Navigate to the project directory: `cd server`
 2. Install the dependencies: `npm install`
 3. Create a .env file & add
-   1. `MONGO_URL=http://localhost:5173`
-   2. `SECRET_KEY=any key for jwt`
+   1. `MONGO_URL = your mongodb url`
+   2. `SECRET_KEY = any key for jwt`
 4. Start the development server: `npm start`
 5. Open your browser and visit: `http://localhost:8080`
    
@@ -83,7 +83,7 @@ Through admin dashboard you can add, delete, edit movies series and add it into 
 1. Navigate to the project directory: `cd admin`
 2. Install the dependencies: `npm install`
 3. Create a .env file & add
-   1. `VITE_SERVER=http://localhost:5173`
+   1. `VITE_SERVER = http://localhost:8080`
 4. Start the development server: `npm run dev`
 5. Open your browser and visit: `http://localhost:5174`
 
