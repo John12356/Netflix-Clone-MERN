@@ -24,6 +24,6 @@ app.use("/api/user", userRoute);
 app.use("/api/movie", movieRoute);
 app.use("/api/list", listRoute);
 
-app.listen(8080, () => {
+app.listen(process.env.PORT, () => {
   console.log("Good to go");
 });
