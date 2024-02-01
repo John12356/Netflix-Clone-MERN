@@ -62,14 +62,19 @@ Clone the repository: `git clone https://github.com/John12356/Netflix-Clone-MERN
 ### Frontend
 1. Navigate to the project directory: `cd client`
 2. Install the dependencies: `npm install`
-3. Start the development server: `npm run dev`
-4. Open your browser and visit: `http://localhost:5173`
+3. Create a .env file & add
+   1. `VITE_SERVER=http://localhost:5173`
+5. Start the development server: `npm run dev`
+6. Open your browser and visit: `http://localhost:5173`
    
 ### Backend
 1. Navigate to the project directory: `cd server`
 2. Install the dependencies: `npm install`
-3. Start the development server: `npm start`
-4. Open your browser and visit: `http://localhost:8080`
+3. Create a .env file & add
+   1. `MONGO_URL=http://localhost:5173`
+   2. `SECRET_KEY=any key for jwt`
+4. Start the development server: `npm start`
+5. Open your browser and visit: `http://localhost:8080`
    
 ### Admin (Refer : [Admin Dashboard](https://github.com/John12356/Fully-Responsive-Dashboard))
 Through admin dashboard you can add, delete, edit movies series and add it into the list with desire names. The same is goes for the user details.
@@ -77,8 +82,10 @@ Through admin dashboard you can add, delete, edit movies series and add it into 
 
 1. Navigate to the project directory: `cd admin`
 2. Install the dependencies: `npm install`
-3. Start the development server: `npm run dev`
-4. Open your browser and visit: `http://localhost:5174`
+3. Create a .env file & add
+   1. `VITE_SERVER=http://localhost:5173`
+4. Start the development server: `npm run dev`
+5. Open your browser and visit: `http://localhost:5174`
 
 ![Screenshot (89)](https://github.com/John12356/Netflix-Clone-MERN/assets/91779049/bc3e5035-65a5-465d-95e2-0986b666ca5e)
 
