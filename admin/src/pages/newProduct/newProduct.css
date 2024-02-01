@@ -1,5 +1,5 @@
 .newproduct {
-  flex: 4;
+  flex: 3;
   padding: 20px;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
@@ -9,11 +9,11 @@
 .newproduct-form {
   margin-top: 10px;
   display: flex;
-  flex-wrap: wrap;
   gap: 20px;
+  flex-wrap: wrap;
 }
 .newproduct-item {
-  width: 250px;
+  width: 200px;
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
@@ -39,4 +39,5 @@
   color: white;
   font-weight: 600;
   cursor: pointer;
+  height: 40px;
 }

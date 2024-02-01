@@ -76,122 +76,126 @@ const NewProduct = () => {
     <div className="newproduct">
       <h1 className="newproduct-title">New Movie</h1>
       <form className="newproduct-form">
-        <div className="newproduct-item">
-          <label htmlFor="">Image</label>
-          <input
-            type="file"
-            id="img"
-            name="img"
-            onChange={(e) => setImg(e.target.files[0])}
-          />
+        <div className="newpro-left">
+          <div className="newproduct-item">
+            <label htmlFor="">Image</label>
+            <input
+              type="file"
+              id="img"
+              name="img"
+              onChange={(e) => setImg(e.target.files[0])}
+            />
+          </div>
+          <div className="newproduct-item">
+            <label htmlFor="">Title Image</label>
+            <input
+              type="file"
+              id="imgTitle"
+              name="imgTitle"
+              onChange={(e) => setImgTitle(e.target.files[0])}
+            />
+          </div>
+          <div className="newproduct-item">
+            <label htmlFor="">Thumbnail Image</label>
+            <input
+              type="file"
+              id="imgSm"
+              name="imgSm"
+              onChange={(e) => setImgSm(e.target.files[0])}
+            />
+          </div>
+          <div className="newproduct-item">
+            <label htmlFor="">Title</label>
+            <input
+              type="text"
+              placeholder="John Wick"
+              name="title"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="newproduct-item">
+            <label htmlFor="">Description</label>
+            <input
+              type="text"
+              placeholder="description"
+              name="desc"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="newproduct-item">
+            <label htmlFor="">Genre</label>
+            <input
+              type="text"
+              placeholder="Action"
+              name="genre"
+              onChange={handleChange}
+            />
+          </div>
         </div>
-        <div className="newproduct-item">
-          <label htmlFor="">Title Image</label>
-          <input
-            type="file"
-            id="imgTitle"
-            name="imgTitle"
-            onChange={(e) => setImgTitle(e.target.files[0])}
-          />
-        </div>
-        <div className="newproduct-item">
-          <label htmlFor="">Thumbnail Image</label>
-          <input
-            type="file"
-            id="imgSm"
-            name="imgSm"
-            onChange={(e) => setImgSm(e.target.files[0])}
-          />
-        </div>
-        <div className="newproduct-item">
-          <label htmlFor="">Title</label>
-          <input
-            type="text"
-            placeholder="John Wick"
-            name="title"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="newproduct-item">
-          <label htmlFor="">Description</label>
-          <input
-            type="text"
-            placeholder="description"
-            name="desc"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="newproduct-item">
-          <label htmlFor="">Genre</label>
-          <input
-            type="text"
-            placeholder="Action"
-            name="genre"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="newproduct-item">
-          <label htmlFor="">Year</label>
-          <input
-            type="text"
-            placeholder="2020"
-            name="year"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="newproduct-item">
-          <label htmlFor="">Limit</label>
-          <input
-            type="text"
-            placeholder="16"
-            name="limit"
-            onChange={handleChange}
-          />
-        </div>
+        <div className="newpro-right">
+          <div className="newproduct-item">
+            <label htmlFor="">Year</label>
+            <input
+              type="text"
+              placeholder="2020"
+              name="year"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="newproduct-item">
+            <label htmlFor="">Limit</label>
+            <input
+              type="text"
+              placeholder="16"
+              name="limit"
+              onChange={handleChange}
+            />
+          </div>
 
-        <div className="newproduct-item">
-          <label htmlFor="">Duration</label>
-          <input
-            type="text"
-            placeholder="136min"
-            name="duration"
-            onChange={handleChange}
-          />
+          <div className="newproduct-item">
+            <label htmlFor="">Duration</label>
+            <input
+              type="text"
+              placeholder="136min"
+              name="duration"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="newproduct-item">
+            <label htmlFor="">Is Series</label>
+            <select name="isSeries" id="series" onChange={handleChange}>
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+          </div>
+          <div className="newproduct-item">
+            <label htmlFor="">Trailer</label>
+            <input
+              type="file"
+              id="trailer"
+              name="trailer"
+              onChange={(e) => setTrailer(e.target.files[0])}
+            />
+          </div>
+          <div className="newproduct-item">
+            <label htmlFor="">Video</label>
+            <input
+              type="file"
+              id="video"
+              name="video"
+              onChange={(e) => setVideo(e.target.files[0])}
+            />
+          </div>
+          {uploaded !== 0 ? (
+            <button className="newproduct-bt" onClick={handleSubmit}>
+              Create
+            </button>
+          ) : (
+            <button className="newproduct-bt" onClick={handleUpload}>
+              Upload
+            </button>
+          )}
         </div>
-        <div className="newproduct-item">
-          <label htmlFor="">Is Series</label>
-          <select name="isSeries" id="series" onChange={handleChange}>
-            <option value="false">No</option>
-            <option value="true">Yes</option>
-          </select>
-        </div>
-        <div className="newproduct-item">
-          <label htmlFor="">Trailer</label>
-          <input
-            type="file"
-            id="trailer"
-            name="trailer"
-            onChange={(e) => setTrailer(e.target.files[0])}
-          />
-        </div>
-        <div className="newproduct-item">
-          <label htmlFor="">Video</label>
-          <input
-            type="file"
-            id="video"
-            name="video"
-            onChange={(e) => setVideo(e.target.files[0])}
-          />
-        </div>
-        {uploaded !== 0 ? (
-          <button className="newproduct-bt" onClick={handleSubmit}>
-            Create
-          </button>
-        ) : (
-          <button className="newproduct-bt" onClick={handleUpload}>
-            Upload
-          </button>
-        )}
       </form>
     </div>
   );

@@ -8,13 +8,13 @@ import { useContext } from "react";
 const MemberWidget = () => {
   const { user } = useContext(AuthContext);
   const [newUsers, setNewUsers] = useState([]);
+  console.log(user);
 
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_SERVER}/api/user?new=true`, {
         headers: {
-          token:
-            "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+          token: `Bearer ${user.accessToken}`,
         },
       })
       .then((res) => {
@@ -23,6 +23,7 @@ const MemberWidget = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  console.log(newUsers);
   return (
     <div className="member-widget">
       <span className="widget-title">Newly Joined</span>

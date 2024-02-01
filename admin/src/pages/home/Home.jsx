@@ -5,8 +5,11 @@ import LineChart from "../../components/chart/LineChart";
 import FeaturedInfo from "../../components/featuredInfo/FeaturedInfo";
 import MemberWidget from "../../components/memberWidget/MemberWidget";
 import TransWidget from "../../components/transWidget/TransWidget";
+import { useContext } from "react";
+import { AuthContext } from "../../context/authContext/AuthContext";
 
 const Home = () => {
+  const { user } = useContext(AuthContext);
   const months = useMemo(
     () => [
       "Jan",
@@ -30,8 +33,7 @@ const Home = () => {
     axios
       .get(`${import.meta.env.VITE_SERVER}/api/user/stats`, {
         headers: {
-          token:
-            "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+          token: `Bearer ${user.accessToken}`,
         },
       })
       .then((res) => {
