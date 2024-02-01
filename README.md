@@ -53,7 +53,7 @@ This Netflix clone aims to replicate key features of the original Netflix platfo
 - **Vercel**: A platform for hosting and deploying web applications.
 - **Render**: A platform for hosting and deploying web applications.
 - **Firebase**: Firebase is a comprehensive storage platform provided by Google.
-- **GUI** - A CSS framework that provides various pre defined components and icons.
+- **Material UI** - A CSS framework that provides various pre defined components and icons.
 
 ## Installation
 To run this portfolio locally, follow these steps:
