@@ -3,6 +3,8 @@
 A Netflix clone MERN (MongoDB, Express.js, React.js, Node.js) application is a web-based platform designed to mimic the functionality and user interface of the popular streaming service, Netflix. The MERN stack is utilized to build this application, combining MongoDB as the database, Express.js as the backend framework, React.js for the frontend, and Node.js as the runtime environment.
 
 ### Weblink: [Live Website](https://netflix-clone-mern-8t6p.vercel.app/)
+#### Note : The server API is deployed at free version of Render. So, by the time you are seeing the live website it may not work. Kindly clone the project into your machine and try to run it by using following steps.
+
 ## Some Images:
 ### Desktop
 
