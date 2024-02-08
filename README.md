@@ -112,4 +112,4 @@ Contributions are welcome! If you'd like to contribute to My Netflix clone, plea
 ## License
 This project is licensed under the [MIT License](LICENSE).
 ## Contact
-For any queries `jhonmoothi85131@gmail.com`
+For any queries `jhonmoorthi85131@gmail.com`
